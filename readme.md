@@ -7,12 +7,14 @@ API boilerplate
 npm install
 ```
 
+
 ### Start the server
 Before you start the server, the server requires a couple of environment variables to be set.  You should get these in an email.
 
 ```
 npm start
 ```
+Note: it will run on the specified port ENV variable with a default port of 4000
 
 ### Testing
 ```
