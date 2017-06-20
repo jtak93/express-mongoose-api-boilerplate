@@ -11,6 +11,8 @@ npm install
 ### Start the server
 Before you start the server, the server requires a couple of environment variables to be set.  You should get these in an email.
 
+Adjust the config variables to app specifics.
+
 ```
 npm start
 ```
@@ -26,3 +28,4 @@ Implement desired Passport Strategies
 
 ### TODO
 Testing implementations/documentation
+ADD CORS

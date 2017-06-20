@@ -26,14 +26,13 @@ console.log(`Connected to: ${config.mongo.url}`)
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // app.use(logger('dev'));
-// app.use(session({
-//     store: new RedisStore({
-//       client: new Redis(config.redis.url)
-//     }),
-//     secret: '342080a8c387b069a0d5dfac5ac89b58',
-//     resave: false,
-//     saveUninitialized: true
-// }));
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use(session({
   store: new MongoStore({mongooseConnection: mongoose.connection}),
   secret: '342080a8c387b069a0d5dfac5ac89b58',
