@@ -1,7 +1,10 @@
 var User = require('../models/user-model');
 
 module.exports.list = function(req, res, next){
-  res.status(200).send();
+  User.find({}, function(err, users) {
+    if (err) return done(err);
+    res.status(200).send(users);
+  })
 }
 module.exports.readMe = function(req, res, next){
   var userId = req.session.passport.user;
